@@ -1,6 +1,7 @@
 <template>
   <button class="t-button" :class="{ [`icon-${iconPosition}`]: true }">
     <t-icon class="icon" v-if="icon" :name="icon"></t-icon>
+    <t-icon class="loading" name="loading"></t-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -22,6 +23,10 @@ export default {
 </script>
 
 <style lang="scss">
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
 .t-button {
   font-size: var(--font-size);
   height: var(--button-height);
@@ -60,6 +65,9 @@ export default {
       margin-right: 0;
       margin-left: .1em;
     }
+  }
+  .loading{
+      animation: spin 2s infinite linear;
   }
 }
 </style>
