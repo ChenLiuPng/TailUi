@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ChenLiuPng/TailUi/issues"
   },
-  "homepage": "https://github.com/ChenLiuPng/TailUi#readme"
+  "homepage": "https://github.com/ChenLiuPng/TailUi#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
 }
