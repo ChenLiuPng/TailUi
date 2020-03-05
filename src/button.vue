@@ -1,7 +1,11 @@
 <template>
-  <button class="t-button" :class="{ [`icon-${iconPosition}`]: true }">
-    <t-icon class="icon" v-if="icon" :name="icon"></t-icon>
-    <t-icon class="loading" name="loading"></t-icon>
+  <button
+    class="t-button"
+    :class="{ [`icon-${iconPosition}`]: true }"
+    @click="$emit('click')"
+  >
+    <t-icon class="icon" v-if="icon && !loading" :name="icon"></t-icon>
+    <t-icon class="loading icon" v-if="loading" name="loading"></t-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -10,22 +14,30 @@
 <script>
 export default {
   props: {
-      icon:{},
-      iconPosition:{
-          type:String,
-          default: 'left',
-          validator(value){
-             return !(value !== 'left' && value !== 'right')
-          }
+    icon: {},
+    loading: {
+      type: Boolean,
+      default: false
+    },
+    iconPosition: {
+      type: String,
+      default: "left",
+      validator(value) {
+        return !(value !== "left" && value !== "right");
       }
+    }
   }
 };
 </script>
 
 <style lang="scss">
 @keyframes spin {
-    0% {transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .t-button {
   font-size: var(--font-size);
@@ -54,7 +66,7 @@ export default {
   }
   > .icon {
     order: 1;
-    margin-right: .1em;
+    margin-right: 0.1em;
   }
   &.icon-right {
     > .content {
@@ -63,11 +75,11 @@ export default {
     > .icon {
       order: 2;
       margin-right: 0;
-      margin-left: .1em;
+      margin-left: 0.1em;
     }
   }
-  .loading{
-      animation: spin 2s infinite linear;
+  .loading {
+    animation: spin 2s infinite linear;
   }
 }
 </style>
