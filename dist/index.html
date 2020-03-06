@@ -41,7 +41,9 @@
         <t-button icon="settings" icon-position="right" :loading="loading1" @click="loading1 = !loading1">按钮</t-button>
         <t-button icon="settings" icon-position="left" :loading="loading1" @click="loading1 = !loading1">按钮</t-button>
         <t-button-group>
-            <t-button icon="left">上一页</t-button>
+            <div>
+                <t-button icon="left">上一页</t-button>
+            </div>
             <t-button>更多</t-button>
             <t-button icon="right" icon-position="right">下一页</t-button>
         </t-button-group>

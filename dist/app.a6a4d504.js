@@ -12617,7 +12617,37 @@ exports.default = void 0;
 //
 //
 //
-var _default = {};
+var _default = {
+  mounted: function mounted() {
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+      for (var _iterator = this.$el.children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var node = _step.value;
+        var name = node.nodeName.toLowerCase();
+
+        if (name !== 'button') {
+          console.warn(' t-button-group 的子元素必须是 t-button, 但是你写的 ' + name);
+        }
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator.return != null) {
+          _iterator.return();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+  }
+};
 exports.default = _default;
         var $8cee80 = exports.default || module.exports;
       
