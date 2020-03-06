@@ -56,6 +56,8 @@
 }
 .t-button-group > .t-button {
   border-radius: 0;
+}
+.t-button-group > .t-button:not(:first-child) {
   margin-left: -1px;
 }
 .t-button-group > .t-button:first-child {
